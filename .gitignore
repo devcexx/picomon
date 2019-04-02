@@ -1,0 +1,9 @@
+.DS_Store
+/lib/__pycache__/
+/deploy/.terraform/
+/bot.token
+/deploy-config.sh
+/dist/
+/requirements.txt.lock
+/deploy/terraform.tfstate
+/deploy/terraform.tfstate.backup

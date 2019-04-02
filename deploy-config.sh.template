@@ -1,0 +1,58 @@
+# Place here the region where the monitors will be deployed. Must have a value
+AWS_REGION="eu-west-2"
+
+# Place here the access key of the AWS account that will be used for deploy the
+# infrastructure. If empty, the one configured in the system will be used (in ~/.aws/credentials)
+AWS_ACCESS_KEY=""
+
+# Place here the secret key of the AWS account that will be used for deploy the
+# infrastructure. If empty, the one configured in the system will be used (in ~/.aws/credentials)
+AWS_SECRET_KEY=""
+
+# Place here the token of the Telegram bot that will send the notifications.
+TGM_BOT_TOKEN=""
+
+# Place here the chats that will receive notifications about the monitorized services.
+# Its format must be a valid Terraform list, and the chats must be
+# valid telegram chat identifiers
+# Example:
+# TGM_RECEIVER_CHATS='["12345343", "-12343541"]'
+TGM_RECEIVER_CHATS='[]'
+
+# Place here the title of the messages that will be sent by the
+# notification service
+NOTIFY_TGM_TITLE="Monitor Service"
+
+# Place here the monitors that will be deployed, in a Terraform map format.
+# The keys must be the name of the monitors, with alphanumeric and underscores
+# characters, and the values; the url of the services.
+# Example:
+# MONITORS='{
+#   "acmupm" = "https://acmupm.es",
+#   "google" = "https://www.google.es"
+# }'
+MONITORS='{}'
+
+# Place the timeout of the monitors' HTTP requests
+HTTP_REQUEST_TIMEOUT=4
+
+# Place here the execution timeout of the monitors functions. This value
+# should be greater than the HTTP timeout.
+MONITOR_EXECUTION_TIMEOUT=8
+
+# Place here the name of the CloudWatch metrics namespace that will
+# hold the custom metrics uploaded by the monitors. An empty value
+# means that all the metrics will be disabled.
+CWATCH_NAMESPACE=""
+
+# Place here the name of the latency metric. An empty value
+# means that this metric will be disabled.
+CWATCH_LATENCY_METRIC_NAME=""
+
+# Place here the name of the state metric. An empty value
+# means that this metric will be disabled.
+CWATCH_STATE_METRIC_NAME=""
+
+# Place here the name of the state metric. An empty value
+# means that this metric will be disabled.
+CWATCH_HTTP_STATUS_METRIC_NAME=""
